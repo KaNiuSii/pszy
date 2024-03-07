@@ -1,0 +1,97 @@
+body {
+  display: flex;
+  align-items: center; /* Centers children vertically */
+  justify-content: center; /* Centers children horizontally */
+  height: 100vh; /* Full viewport height */
+  margin: 0;
+  overflow: hidden;
+  font-family: "Arial", sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+h2 {
+  color: #444;
+  margin-bottom: 20px; /* Adds space between the heading and the button */
+}
+
+button,
+#proverb {
+  margin: 10px 0; /* Adds vertical spacing but keeps items centered */
+  width: 100%;
+}
+
+#main-cont {
+  z-index: 2; /* Ensures it's above the particle effect */
+  position: relative; /* Ensures proper stacking context */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  width: 30%;
+  /* Adjust padding or margins as needed */
+}
+button {
+  background-color: #008cba;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005f73;
+}
+
+p {
+  text-align: center;
+}
+#proverb {
+  margin-top: 20px;
+  font-style: italic;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  max-width: 80%;
+}
+
+#particle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Behind the main content */
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+.particle {
+  position: absolute;
+  will-change: transform, opacity;
+  animation: float 10s infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+#emoji-holder {
+  display: flex; /* Enables flexbox layout */
+  align-items: center; /* Vertically aligns items in the middle */
+  gap: 10px; /* Adds some space between the elements */
+}
